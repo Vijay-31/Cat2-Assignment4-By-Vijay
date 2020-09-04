@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 4</title>
+    <script>
+    function ValidateForm(){
+   var names = document.forms["myForm"]["names"].value;
+   var month = document.forms["myForm"]["month"].value;
+   var year = document.forms["myForm"]["year"].value;
+     if (names == null || names ==""){
+       alert ("name cannot be empty"); //<-- here was lert()
+       return false;
+     }
+     if(month == null || month ==""){
+       alert ("month must be selected");
+       return false;
+     }
+         if(year == null || year ==""){
+       alert ("year must be selected");
+       return false;
+     }
+     if(!this.myForm.checkbox.checked)
+{
+   alert('Please select the checkbox first');
+   return false;
+}
+var radios = document.getElementsByName("gender");
+    var formValid = false;
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;
+    }
+
+    if (!formValid) alert("Please select one option from male or female");
+    return formValid;
+ }
+    </script>
+    <style type="text/css">
+      body {
+  font-family: 'Alice', serif;
+  font-size: 20px;
+  background: linear-gradient( 90deg, #9cecfb, #65c7f7, #0052d4);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.m {
+  font-size: 40px;
+  color: black;
+
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: solid 2px #3c2c3e;
+  background: #8675a9;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #c3aed6;
+  outline: none;
+}
+
+
+hr {
+  border: 2px dotted #8675a9;
+  margin-bottom: 25px;
+}
+
+.car{
+  padding: 10px 15px;
+  font-size: 18px;
+  text-align: center;
+  
+}
+.year{
+  padding: 10px 15px;
+  font-size: 18px;
+  text-align: center;
+  
+}
+.M{
+  padding: 10px 15px;
+  font-size: 18px;
+  text-align: center;
+  
+}
+
+.button1 {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: #86c4ba;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button1:hover {
+  background-color: #318fb5
+}
+
+.button1:active {
+  background-color: #318fb5;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.head{
+  text-align: center;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <H1 class="head">Data Collector</H1>
+    <form enctype="multipart/form-data" name = "myForm" action = "#" onsubmit="return ValidateForm()" method = "post">
+      <MARQUEE class="m">Welcome to Detail Collector</MARQUEE>
+
+  Name: <input name ="names" type = "text" size = "55" maxlength = "100"><br>
+  Password: <input type="password" name="Password" value=""> <br>
+      Male: <input type="radio" id="radio1" name="gender" value="1"> 
+      Female: <input type="radio" id="radio2" name="gender" value="2"> <br>
+      Month: <select class="M" id ="selectmonth" name="month" required>
+        <option value="">-select month-</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+          <option value="March">March</option><p>
+        <option value="April">April</option><p>
+        <option value="May">May</option><p>
+        <option value="June">June</option><p>
+        <option value="July">July</option><p>
+        <option value="August">August</option><p>
+        <option value="September">September</option><p>
+        <option value="October">October</option><p>
+        <option value="November">November</option><p>
+        <option value="December">December</option><p>
+      </select><p>
+
+    Year: <select class="year" name ="year" required>
+        <option value = ""> -select year-</option>
+        <option value = "2015"> 2015 </option>
+        <option value = "2016"> 2016 </option>
+        <option value = "2017"> 2017 </option>
+      </select><p>
+        <hr SIZE="5" COLOR="RED">
+         <MARQUEE class="m">Enter the below information to move forward</MARQUEE>
+<h1>Select Your Car</h1>
+
+<p>This Car Information is Required to be filled</p>
+
+
+  <label for="cars">Choose a car:</label>
+  <select class="car" name="cars" id="cars" required>
+    <option value="">None</option>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+  </select>
+  <br><br>
+  
+
+<hr>
+      Do you want to register? <input class="d" type="checkbox" name="checkbox" value="check"> <br>
+      <button class="button1" type="submit" name="button">Submit</button>
+      <button class="button1" type="reset" name="button">Reset</button>
+    </form>
+  </body>
+</html>

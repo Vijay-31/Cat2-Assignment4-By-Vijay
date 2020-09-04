@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Style -->
+<style type="text/css">
+  body {
+    font-family: 'Alice', serif;
+  font-size: 20px;
+  background: linear-gradient( 90deg, #9cecfb, #65c7f7, #0052d4); 
+  }
+
+  .m {
+  font-size: 40px;
+  color: black;
+
+}
+</style>
+
+<!-- fadeOut fadeIn -->
+<script>
+
+$(document).ready(function(){
+  $(".btn1").click(function(){
+    $("p1").fadeOut();
+  });
+  $(".btn2").click(function(){
+    $("p1").fadeIn();
+  });
+});
+</script>
+
+
+
+
+<!-- Show Hide -->
+
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p2").hide();
+  });
+  $("#show").click(function(){
+    $("p2").show();
+  });
+});
+</script>
+
+<!--Dimension -->
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    var txt = "";
+    txt += "Width of div: " + $("#div1").width() + "</br>";
+    txt += "Height of div: " + $("#div1").height();
+    $("#div1").html(txt);
+  });
+});
+</script>
+<style>
+#div1 {
+  height: 100px;
+  width: 300px;
+  padding: 10px;
+  margin: 3px;
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+</style>
+
+
+
+<!-- CSS -->
+<script>
+$(document).ready(function(){
+  $("button3").click(function(){
+    alert("Background color = " + $("p").css("background-color"));
+  });
+});
+</script>
+
+
+
+
+<!-- Add And remove -->
+
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("p3").append(" <b>Appended text</b>.");
+  });
+
+  $("#btn2").click(function(){
+    $("ol").append("<li>Appended item</li>");
+  });
+});
+</script>
+<script>
+$(document).ready(function(){
+  $("#btn3").click(function(){
+    $("li").remove();
+  });
+});
+</script>
+
+<!--Traversing Methods-->
+<script>
+    
+    $(document).ready(function() {
+    $(".top").add(".middle").addClass("selected");
+});
+    
+</script>
+<style>
+    .selected { color:green; }
+ </style>
+
+<script>
+    $(document).ready(function(){
+       $("div").children(".designed").addClass("blue");
+    });
+ </script>
+ 
+
+</head>
+<body>
+<!-- BODY-->
+<h1 id="h">Jquery Quesion</h1>
+<!-- fadeOut fadeIn -->
+<MARQUEE class="m">Fade it in Fade it out</MARQUEE>
+<p1>This is fade in and fade out </p1>
+
+<button class="btn1">Fade out</button>
+<button class="btn2">Fade in</button>
+<hr>
+<!-- Show Hide -->
+<MARQUEE class="m">Show it or hide it you need to make the choice!</MARQUEE>
+<p2>If you click on the "Hide" button, I will disappear.</p2>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button><br>
+<hr>
+<!-- Add And remove -->
+<MARQUEE class="m">Add it if its important , remove when not in use   BYEE!</MARQUEE>
+<p3>This is a paragraph.</p3>
+<p3>This is another paragraph.</p3>
+
+<ol>
+  <li>List item 1</li>
+  <li>List item 2</li>
+  <li>List item 3</li>
+</ol>
+
+<button id="btn1">Append text</button>
+<button id="btn2">Append List items</button>
+<button id="btn3">Remove List Items</button>
+<!-- CSS -->
+<MARQUEE class="m">Big helo to Css Styling from Jquery</MARQUEE>
+<hr>
+<h2>This is CSS Styling in Jquery</h2>
+
+<p4 style="background-color:#ff0000">This is a paragraph.</p>
+<p4 style="background-color:#00ff00">This is a paragraph.</p>
+<p4 style="background-color:#0000ff">This is a paragraph.</p>
+
+<button>Return background-color of p</button3><br>
+<hr>
+<!--dimension -->
+<MARQUEE class="m">I will display your Dimensions so sitback and relax</MARQUEE>
+<div id="div1"></div><br>
+
+
+<button>Display dimensions of div</button>
+<br>
+<p5>width() - returns the width of an element.</p5>
+<p5>height() - returns the height of an element.</p5>
+
+<hr>
+<MARQUEE class="m">Taversing Method thats what you call me right :)</MARQUEE>
+<div class="traverse">
+    <ul>
+        <li class = "above">list item 0</li>
+        <li class = "selected">list item 1</li>
+        <li class = "selected">list item 2</li>
+        <li class = "selected">list item 3</li>
+        <li class = "selected">list item 4</li>
+        <li class = "bottom">list item 5</li>
+        <li class = "bottom">list item 6</li>
+        <li class = "below">list item 7</li>
+     </ul>
+</div>
+
+<div>
+    <span>Unagi</span>
+    <p class = "designed">Joey doesnt share Food</p>
+    <div class = "designed">This is designed using jQuery</div>
+    <p class = "biggest">Byee from Chandler Muller Bing!</p>
+ </div>
+
+</body>
+</html>
